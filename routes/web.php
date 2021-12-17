@@ -35,3 +35,16 @@ Route::put('/api/pago/actualizar', [PagoController::class, 'update']);
 Route::delete('/api/pago/eliminar', [PagoController::class, 'destroy']);
 
 
+///////////////rutas de bono//////////////////////////////////////
+Route::get('/api/bono', [BonoController::class, 'index']);
+Route::post('/api/bono/registrar', [BonoController::class, 'store']);
+Route::put('/api/bono/actualizar', [BonoController::class, 'update']);
+Route::delete('/api/bono/eliminar', [BonoController::class, 'delete']);
+ 
+////////////////// rutas de rango//////////////////////////////////////
+
+Route::get('/api/rango',[RangoController::class, 'index']);
+Route::post('/api/rango/registrar',[RangoController::class, 'store']);
+Route::post('/api/rango/actualizar',[RangoController::class, 'update']);
+Route::post('/api/rango/eliminar',[RangoController::class, 'delete']);
+
