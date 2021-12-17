@@ -15,6 +15,8 @@ class CreateRangosTable extends Migration
     {
         Schema::create('rangos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre',45);
+            $table->integer('cantidad_horas');
             $table->timestamps();
         });
     }
