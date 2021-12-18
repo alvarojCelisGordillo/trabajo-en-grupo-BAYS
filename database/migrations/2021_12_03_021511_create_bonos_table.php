@@ -15,6 +15,12 @@ class CreateBonosTable extends Migration
     {
         Schema::create('bonos', function (Blueprint $table) {
             $table->id();
+            $table->datetime('fecha_expedicion');
+            $table->datetime('fecha_vencimiento');
+            $table->integer('monto');
+            $table->string('descripcion',250);
+            $table->char('estado',2);
+            //$table->foreignId('id_cliente')->constrained('clientes');
             $table->timestamps();
         });
     }
