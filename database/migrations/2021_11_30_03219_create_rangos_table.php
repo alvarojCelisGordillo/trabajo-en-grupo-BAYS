@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCreditosTable extends Migration
+class CreateRangosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateCreditosTable extends Migration
      */
     public function up()
     {
-        Schema::create('creditos', function (Blueprint $table) {
+        Schema::create('rangos', function (Blueprint $table) {
             $table->id();
-            $table->integer('valor_abonado');
-            $table->integer('valor_deuda');
-            $table->integer('saldo');
-            $table->char('estado');
-            // $table->foreignId('id_factura')->constrained('facturas');
+            $table->string('nombre', 100);
+            $table->bigInteger('valor_para_cupo');
+            $table->bigInteger('cantidad_horas');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateCreditosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('creditos');
+        Schema::dropIfExists('rangos');
     }
 }

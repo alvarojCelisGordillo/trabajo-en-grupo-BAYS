@@ -24,7 +24,7 @@ class CreditoController extends Controller
         $credito->saldo = $request->saldo;
         $credito->estado = $request->estado;
 
-        // $credito->id_factura = $request->idFactura;
+        $credito->id_factura = $request->idFactura;
 
         $credito->save();
     }
@@ -36,12 +36,12 @@ class CreditoController extends Controller
         $credito->saldo = $request->saldo;
         $credito->estado = $request->estado;
 
-        // $credito->id_factura = $request->idFactura;
+        $credito->id_factura = $request->idFactura;
 
         $credito->save();
     }
 
-    public function delete(Request $request) {
+    public function destroy(Request $request) {
         $credito = Credito::findOrFail($request->id);
         $credito->delete();
     }
